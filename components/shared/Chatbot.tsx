@@ -35,12 +35,26 @@ const ChatBot: React.FC = () => {
     let botMessage: Message = { text: '', sender: 'bot' };
 
     if (userMessage.includes('hi') || userMessage.includes('hello')) {
-      botMessage.text = 'Hi there!';
+      botMessage.text = 'Hi there! How can I assist you with ChitroSparsh today?';
     } else if (userMessage.includes('time')) {
       const time = new Date().toLocaleTimeString();
       botMessage.text = `The current time is ${time}.`;
+    } else if (userMessage.includes('features')) {
+      botMessage.text = 'ChitroSparsh offers AI-powered tools such as Image restore, Genrative fill, Object remove, Object recolor, and background removal.';
+    } else if (userMessage.includes('technologies')) {
+      botMessage.text = 'ChitroSparsh is built using Next.js, Tailwind CSS, TypeScript, Cloudinary, Clerk, MongoDB, and Stripe.';
+    } else if (userMessage.includes('how does ai work')) {
+      botMessage.text = 'AI in ChitroSparsh uses machine learning algorithms to analyze and process images, enabling features.';
+    } else if (userMessage.includes('payment options')) {
+      botMessage.text = 'We use Stripe to handle payments, offering secure and seamless transactions for premium features.';
+    } else if (userMessage.includes('security')) {
+      botMessage.text = 'ChitroSparsh ensures security through Clerk for authentication and follows best practices to protect user data.';
+    } else if (userMessage.includes('future enhancements')) {
+      botMessage.text = 'Future plans include developing mobile applications, adding more AI-driven features, and expanding social sharing capabilities.';
+    } else if (userMessage.includes('contact')) {
+      botMessage.text = 'You can reach out to us at support@chitrosparsh.com for any queries or assistance.';
     } else {
-      botMessage.text = "I'm sorry, I didn't understand that.";
+      botMessage.text = "I'm sorry, I didn't understand that. Can you please rephrase?";
     }
 
     setTimeout(() => {
